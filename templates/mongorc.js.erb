@@ -1,6 +1,6 @@
 function authRequired() {
   try {
-    if (db.serverCmdLineOpts().code == 13) {
+    if (db.adminCommand('getCmdLineOpts').ok == 0) {
       return true;
     }
     return false;
